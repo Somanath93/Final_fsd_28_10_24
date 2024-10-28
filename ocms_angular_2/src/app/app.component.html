@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<div *ngIf="addModalVisible" class="modal">
+   
+   
+     
+  <div class="one">
+      
+      <form class="form" [formGroup]="addCourseForm">
+          <span class="closes" >&times;</span>
+          <h3>Add Course Form</h3>
+         
+
+          <input type="text" class="inp" placeholder="Enter title" [formControl]="title">
+
+     
+          <input type="text" class="inp" placeholder="Enter description " [formControl]="description">
+
+   
+          <input type="text" class="inp" placeholder="Enter category " [formControl]="category">
+
+
+          <input type="text" class="inp" placeholder="Enter Difficulty " [formControl]="difficulty">
+
+          
+          <input type="text" class="inp" placeholder="Enter price " [formControl]="price">
+
+          <input type="text" class="inp" placeholder="Enter duration " [formControl]="duration">
+
+         
+          <input type="text" class="inp" placeholder="Enter instructorName " [formControl]="instructorName">
+
+      
+          <input type="text" class="inp" placeholder="Enter email " [formControl]="email">
+
+         
+          <input type="text" class="inp" placeholder="Enter imageUrl " [formControl]="imageUrl">
+
+         
+          <button class="btn" type="button" (click)="saveCourse()">save course</button>
+      </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+  <table class="table">
+      <thead class="thead">
+          <tr>
+              <th>Sr.No</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Difficulty</th>
+              <th>Price</th>
+              <th>Instructor</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+
+      <tbody class="tbody" *ngFor="let course of courses; let i = index">
+        <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.category }}</td>
+            <td>{{ course.difficulty }}</td>
+            <td>{{ course.price }}</td>
+            <td>{{ course.instructorName }}</td>
+            <td>
+                <div class="action">
+                    <div class="delete">
+                        <i class="fa-solid fa-trash" (click)="deleteCourse(course.id)"></i>
+
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+      
+  </table>
+
+  <div class="button">
+    <button  (click)="showAddCourseModal()">Add-Course</button>
+</div>
+
+ 
+</div>

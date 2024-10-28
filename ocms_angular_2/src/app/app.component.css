@@ -1,0 +1,59 @@
+.container {
+    width: 100%;  
+    background-color: #f9f9f9;
+    padding: 20px;
+    padding-top: 8%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+   
+}
+
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid black;
+
+}
+
+.thead th {
+    background-color: #d3e8fb;
+    color: rgb(28, 26, 26);
+    padding: 2%;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 16px;
+    border-bottom: 2px solid #ddd;
+    
+}
+
+
+.tbody td {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+.action {
+  
+    display: flex;
+    justify-content: center;
+    cursor: pointer
+    
+  
+}
+
+
+
+
+
+
+
+
+
