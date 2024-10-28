@@ -1,0 +1,29 @@
+version: '3.8'
+ 
+services:
+  backend:
+    image: ocms-img
+    container_name: ocms-cont
+    build:
+      context: ./ocms
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    networks:
+      - app-network
+ 
+  frontend:
+    image: angular-img
+    container_name: angular-cont
+    build:
+      context: ./ocms_angular
+      dockerfile: Dockerfile
+    ports:
+      - "81:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend 
+networks:
+  app-network:
+    driver: bridge
